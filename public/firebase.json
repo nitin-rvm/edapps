@@ -1,5 +1,5 @@
 {
-  "firebase": "amber-inferno-3378",
+  "firebase": "edapps",
   "public": ".",
   "ignore": [
     "firebase.json",
