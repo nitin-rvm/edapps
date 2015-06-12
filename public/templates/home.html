@@ -1,0 +1,35 @@
+<div class = "container" ng-init = "get_landing_pages();">
+	<div class='row'>
+		<div class="col-sm-12" style="background-color:lavenderblush;  height: 675px; margin-top: 60px;">
+			<table class="table">
+		      <thead>
+		      	<tr>
+		      		<a href="#/add_landingPage"><button class="btn btn-primary" style="margin-left: 1000px; width: 110px;">Add New Page</button></a>
+		      	</tr>
+		        <tr>
+		          <th>App Name</th>
+		          <th>Title</th>
+		          <th>Apple Link</th>
+		          <th>Google Link</th>
+		          <th>Image</td>
+		          <th>Action</th> 
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr ng-repeat="page in pages">
+		          <td>{{ page.app_name }}</td>
+				  <td>{{ page.title }}</td>
+				  <td>{{ page.apple_link }}</td>
+				  <td>{{ page.google_link }}</td>	
+				  <td><img src = "{{page.app_logo}}" width="120px" height="120px"></td>		
+				  <td>
+				    <a href="#/{{page.app_name}}" title="View Page" ><span><i class="glyphicon glyphicon-eye-open">    </i></span></a>&nbsp; &nbsp;| &nbsp; &nbsp;
+                    <a href="#/landing/{{page.app_name}}/edit" title="Eidt Page"><span><i class="glyphicon glyphicon-edit"></i></span></a>&nbsp; &nbsp;| &nbsp; &nbsp;
+                    <a href="#/landing/{{page.app_name}}/deleted" title="Delete Page" ng-click="deletePage(user.id)"><span><i class="glyphicon glyphicon-trash"></i></span></a>
+                  </td>
+		        </tr>		      
+		      </tbody>
+		    </table>
+		</div>
+	</div>
+</div>
