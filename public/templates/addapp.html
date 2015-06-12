@@ -16,9 +16,8 @@
               <td>Application Name</td>
               <td></td>
               <td><div class="form-group" ng-class="{'has-error': addAppFrm.app_name.$dirty && addAppFrm.app_name.$invalid, 'has-success': !addAppFrm.app_name.$invalid}">
-                    <input class="form-control" ng-pattern="/^[a-zA-Z0-9]+$/" ng-model="addApp.app_name" required="required" ng-minlength="5" ng-maxlength="12" maxlength="100" type="text" name="app_name"/>
+                    <input class="form-control" ng-model="addApp.app_name" required="required"  type="text" name="app_name"/>
                     <span ng-show="addAppFrm.app_name.$error.required"></span>
-                    <span ng-show="addAppFrm.app_name.$error.pattern" class="text-danger">AppName Required Alfa-Numeric Symbols.</span>
                   </div></td>
             </tr>
             <tr>

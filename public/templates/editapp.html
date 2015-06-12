@@ -64,9 +64,9 @@
                     <span ng-show="selectedLandingPageFrm.description.$error.required"></span>               
                   </div></td>
             </tr>
+              <td><input type= "hidden" ng-model = "selectedLandingPage[0].$id" name= "id"></td>
               <td></td>
-              <td></td>
-              <td><button class="btn btn-primary" ng-click="update_app(selectedLandingPageFrm)">Update</button></td>
+              <td><button class="btn btn-primary" ng-click="update_app(selectedLandingPage[0])">Update</button></td>
             </tr>
           </tbody>
       </table> 

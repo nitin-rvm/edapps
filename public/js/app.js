@@ -16,8 +16,16 @@ var app = angular.module('edApps',[
             templateUrl: 'templates/addapp.html',
             controller: 'HomeController'
         }); 
-         $routeProvider.when('/landing/:appName/edit', {
+         $routeProvider.when('/landing/:appName/:appID/edit', {
             templateUrl: 'templates/editapp.html',
+            controller: 'HomeController'
+        });
+         $routeProvider.when('/landing/:appName/deleted', {
+            templateUrl: 'templates/home.html',
+            controller: 'HomeController'
+        }); 
+         $routeProvider.when('/landing/:appName', {
+            templateUrl: 'templates/showapp.html',
             controller: 'HomeController'
         });
     }]);

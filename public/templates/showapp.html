@@ -1,0 +1,54 @@
+<style type="text/css">	
+	.colm-custom{
+	  background-color: window;
+      width: 330px;
+	}
+	.pg-title{
+		text-align: center;
+		font-family: Arial,sans-serif;
+		color:black;
+		font-size: 32px;
+	}
+	.pg-description{
+		margin: 5px;
+		font-family: Arial,sans-serif;
+		line-height: 22px;
+		text-align: justify; 
+		margin-top: 10px;
+		font-size: 16px;
+		color: black;
+	}
+	
+}
+</style>
+<div class="container">
+  <div class="row">
+   <div class="col-sm-4"></div>
+	<div class="col-sm-4 colm-custom">
+            <table class= "table-responsive app-table">
+              <tbody>
+                <tr>      
+                  <td colspan="2"><h1 class="pg-title"><b>{{showLandingPage[0].title}}</b></h1></td>
+                </tr>
+                <tr>
+				  <td class="custom-tr"><a href="{{showLandingPage[0].apple_link}}">
+					  <img src="images/apple-logo.png" alt="download from google play store" style="width:130px;height:50px;">
+					</a>
+				  </td>
+                  <td><a href="{{showLandingPage[0].google_link}}">
+					  <img src="images/google-logo.png" alt="download from google play store" style="width:130px;height:40px;"></a>
+				  </td>	  
+                </tr>              
+                <tr>                  
+                  <td colspan="2"><img src="{{showLandingPage[0].app_logo}}" height="250px" width="300px"></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><p class="pg-description">{{showLandingPage[0].description}}</p></td>
+                </tr>
+                
+              </tbody>
+            </table>
+        </div>
+        <div class="col-sm-4"></div>
+   </div>
+</div>
