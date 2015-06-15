@@ -1,76 +1,68 @@
-<style>
-.customer-edit{
-    height: 370px;
-    margin-left: 250px;
-    margin-top: 60px;
-    width: 700px;
-}
+ <style>
+    body {
+        /*background: #f5f5f5;*/
+    }
+    .content_wrapper {
+        background:#faf9f9;
+    }
+    .submit_btn {
+        margin: 40px 0 0 130px;
+    }
 </style>
-<div class="container">
-  <div class='customer-edit'>
-  <h3>Edit Landing Page</h3>
-    <form name="selectedLandingPageFrm">
-      <table class="table">
-          <tbody>
-            <tr>
-              <td>Application Name </td>
-              <td></td>
-              <td><div class="form-group" ng-class="{'has-error': selectedLandingPageFrm.app_name.$dirty && selectedLandingPageFrm.app_name.$invalid, 'has-success': !selectedLandingPageFrm.app_name.$invalid}">
-                    <input class="form-control" ng-pattern="/^[a-zA-Z0-9]+$/" ng-model="selectedLandingPage[0].app_name" required="required" ng-minlength="5" ng-maxlength="12" maxlength="100" type="text" name="app_name"/>
-                    <span ng-show="selectedLandingPageFrm.app_name.$error.required"></span>
-                    <span ng-show="selectedLandingPageFrm.app_name.$error.pattern" class="text-danger">AppName Required Alfa-Numeric Symbols.</span>
-                  </div></td>
-            </tr>
-            <tr>
-              <td>Title</td>
-              <td></td>
-              <td><div class="form-group" ng-class="{'has-error': selectedLandingPageFrm.title.$dirty && selectedLandingPageFrm.title.$invalid, 'has-success': !selectedLandingPageFrm.title.$invalid}">
-                    <input class="form-control" ng-model="selectedLandingPage[0].title" required="required"/>
-                    <span ng-show="selectedLandingPageFrm.title.$error.required"></span>
-                  </div></td></td>
-            </tr>
-            <tr>
-              <td>Apple Link</td>
-              <td></td>
-              <td><div class="form-group" ng-class="{'has-error': selectedLandingPageFrm.apple_link.$dirty && selectedLandingPageFrm.apple_link.$invalid, 'has-success': !selectedLandingPageFrm.apple_link.$invalid}">
-                    <input class="form-control" ng-model="selectedLandingPage[0].apple_link" required="required" type="text" name="apple_link"/>
-                    <span ng-show="selectedLandingPageFrm.apple_link.$error.required"></span>               
-                  </div></td>
-            </tr>
-             <tr>
-              <td>Google Link</td>
-              <td></td>
-              <td><div class="form-group" ng-class="{'has-error': selectedLandingPageFrm.google_link.$dirty && selectedLandingPageFrm.google_link.$invalid, 'has-success': !selectedLandingPageFrm.google_link.$invalid}">
-                    <input class="form-control" ng-model="selectedLandingPage[0].google_link" required="required" type="text" name="google_link"/>
-                    <span ng-show="selectedLandingPageFrm.google_link.$error.required"></span>               
-                  </div></td>
-            </tr>
-            
-            <tr>
-              <td>App Image</td>
-              <td></td>
-              <td><div class="form-group ">                   
-                    <img ng-show="!image" id="defaultLogo" ng-src="{{selectedLandingPage[0].app_logo}}" width="150px" height="150px"/>
-                    <img ng-show="image" id="newLogo" ng-src="{{image.resized.dataURL}}" width="150px" height="150px"/>
-                     <input type="file" accept="image/*" image="image" name="logo" id="uploadImage" class="choose-photo" resize-max-height="200" resize-max-width="200" resize-quality="0.7"/>
-                  </div></td>
-            </tr>
-            <tr>
-            <tr>
-              <td>Description</td>
-              <td></td>
-              <td><div class="form-group" ng-class="{'has-error': selectedLandingPageFrm.description.$dirty && selectedLandingPageFrm.description.$invalid, 'has-success': !selectedLandingPageFrm.description.$invalid}">
-                    <textarea class="form-control" ng-model="selectedLandingPage[0].description" required="required" type="text" name="description"></textarea>
-                    <span ng-show="selectedLandingPageFrm.description.$error.required"></span>               
-                  </div></td>
-            </tr>
-              <td><input type= "hidden" ng-model = "selectedLandingPage[0].$id" name= "id"></td>
-              <td></td>
-              <td><button class="btn btn-primary" ng-click="update_app(selectedLandingPage[0])">Update</button></td>
-            </tr>
-          </tbody>
-      </table> 
-    </form>
-  </div>
+<div class="content_section">
+    <div>
+        <div class="my-teams">
+            <h1>Edit Page </h1>
+        </div>
+        <div class="white-bg">
+            <div class="content-part">
+                <div class="create-team">                   
+                    <div class="clearfix">&nbsp;</div>
+                    <form name="selectedLandingPageFrm" ng-submit="update_app(selectedLandingPage[0])"> 
+                        <div class="form-group" ng-class="{'has-error': selectedLandingPageFrm.app_name.$dirty && selectedLandingPageFrm.app_name.$invalid, 'has-success': !selectedLandingPageFrm.app_name.$invalid}">
+                           <input class="form-control input-lg" ng-model="selectedLandingPage[0].app_name" required="required"  type="text" name="app_name" placeholder="App Name"/>
+                           <span ng-show="selectedLandingPageFrm.app_name.$error.required"></span>
+                        </div>
+
+                        <div class="form-group" ng-class="{'has-error': selectedLandingPageFrm.title.$dirty && selectedLandingPageFrm.title.$invalid, 'has-success': !selectedLandingPageFrm.title.$invalid}">
+                          <input class="form-control input-lg" ng-model="selectedLandingPage[0].title" type="text" name="title" required="required" placeholder="Title"/>
+                          <span ng-show="selectedLandingPageFrm.title.$error.required"></span>
+                        </div>
+
+                        <div class="form-group user-profile">
+                            <div class="left_img"> 
+                                   <img ng-show="!image" id="defaultLogo" ng-src="{{selectedLandingPage[0].app_logo}}" width="150px" height="150px"/>
+                                 <img ng-show="image" id="newLogo" ng-src="{{image.resized.dataURL}}" width="150px" height="150px"/>
+                            </div>
+                            <div class="profile_right">
+                                <h2></h2>
+                             
+                                <input type="file" accept="image/*" image="image" name="logo" id="uploadImage" class="choose-photo" resize-max-height="200" resize-max-width="200" resize-quality="0.7"/>
+                                <a class="chs_photo">choose Photo</a>
+                            </div>
+                            <div class="clearfix">&nbsp;</div>
+                        </div> 
+                        <div class="form-group" ng-class="{'has-error': selectedLandingPageFrm.apple_link.$dirty && selectedLandingPageFrm.apple_link.$invalid, 'has-success': !selectedLandingPageFrm.apple_link.$invalid}">
+                           <input class="form-control input-lg" ng-model="selectedLandingPage[0].apple_link" required="required" type="text" name="apple_link" placeholder="Apple Link"/>
+                           <span ng-show="selectedLandingPageFrm.apple_link.$error.required"></span>               
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': selectedLandingPageFrm.google_link.$dirty && selectedLandingPageFrm.google_link.$invalid, 'has-success': !selectedLandingPageFrm.google_link.$invalid}">
+                            <input class="form-control input-lg" ng-model="selectedLandingPage[0].google_link" required="required" type="text" name="google_link" placeholder="Google Link"/>
+                            <span ng-show="selectedLandingPageFrm.google_link.$error.required"></span>               
+                        </div>
+
+
+                        <div class="form-group" ng-class="{'has-error': selectedLandingPageFrm.description.$dirty && selectedLandingPageFrm.description.$invalid, 'has-success': !selectedLandingPageFrm.description.$invalid}">
+                             <textarea class="form-control input-lg" ng-model="selectedLandingPage[0].description" required="required" type="text" name="description" placeholder="Description" cols="20" rows="5"></textarea>            
+                        </div>
+                         <input type= "hidden" ng-model = "selectedLandingPage[0].$id" name= "id">
+                        <div class="form-group">
+                            <button type="submit" class="team-submit submit_btn" ng-click="submitted=true">Update Page
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
- 

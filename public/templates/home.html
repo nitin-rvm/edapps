@@ -1,10 +1,16 @@
-<div class = "container" ng-init = "get_landing_pages();">
+<style type="text/css">    
+    .landing-Table{
+    	padding: 12px 0; 
+    }
+</style>
+<div class = "content_section" ng-init = "get_landing_pages();">
+<div class = "white-bg">
 	<div class='row'>
 		<a href="#/add_landingPage"><button class="btn btn-success pull-right" style="margin-right: 15px; margin-top: 10px;margin-bottom: 10px;">Add New Page</button></a>
 	</div>
 	<div class='row'>
 		<div class="col-sm-12">
-			<table class="table-responsive table table-bordered table-hover">
+			<table class="table-responsive table table-hover landing-Table">
 		      <thead>
 		        <tr>
 		          <th>App Name</th>
@@ -23,13 +29,14 @@
 				  <td>{{ page.google_link }}</td>	
 				  <td><img src = "{{page.app_logo}}" width="120px" height="120px"></td>		
 				  <td>
-				    <a href="#/landing/{{page.app_name}}" title="View Page" ><span><i class="glyphicon glyphicon-eye-open"></i></span></a>
-                    <a href="#/landing/{{page.app_name}}/{{page.$id}}/edit" title="Edit Page"><span><i class="glyphicon glyphicon-edit"></i></span></a>
-                    <a href="#/landing/{{page.app_name}}/deleted" title="Delete Page" ng-click="delete_landing_page(page.$id);" ><span><i class="glyphicon glyphicon-trash"></i></span></a> 
+				    <a href="#/landing/{{page.app_name}}" title="View Page" ><span>View | </span></a>
+                    <a href="#/landing/{{page.app_name}}/{{page.$id}}/edit" title="Edit Page"><span>Edit | </span></a>
+                    <a href="#/landing/{{page.app_name}}/deleted" title="Delete Page" ng-click="delete_landing_page(page.$id);" ><span>Delete</span></a> 
                   </td>
 		        </tr>		      
 		      </tbody>
 		    </table>
 		</div>
 	</div>
+</div>
 </div>

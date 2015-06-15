@@ -1,74 +1,67 @@
 <style>
-.customer-edit{
-    height: 370px;
-    margin-left: 250px;
-    margin-top: 60px;
-    width: 700px;
-}
+    body {
+        /*background: #f5f5f5;*/
+    }
+    .content_wrapper {
+        background:#faf9f9;
+    }
+    .submit_btn {
+        margin: 40px 0 0 130px;
+    }
 </style>
-<div class="container">
-  <div class='customer-edit'>
-  <h3>Add Landing Page</h3>
-    <form name="addAppFrm">
-      <table class="table">
-          <tbody>
-            <tr>
-              <td>Application Name</td>
-              <td></td>
-              <td><div class="form-group" ng-class="{'has-error': addAppFrm.app_name.$dirty && addAppFrm.app_name.$invalid, 'has-success': !addAppFrm.app_name.$invalid}">
-                    <input class="form-control" ng-model="addApp.app_name" required="required"  type="text" name="app_name"/>
-                    <span ng-show="addAppFrm.app_name.$error.required"></span>
-                  </div></td>
-            </tr>
-            <tr>
-              <td>Title</td>
-              <td></td>
-              <td><div class="form-group" ng-class="{'has-error': addAppFrm.title.$dirty && addAppFrm.title.$invalid, 'has-success': !addAppFrm.title.$invalid}">
-                    <input class="form-control" ng-model="addApp.title" required="required"/>
-                    <span ng-show="addAppFrm.title.$error.required"></span>
-                  </div></td></td>
-            </tr>
-            <tr>
-              <td>Apple Link</td>
-              <td></td>
-              <td><div class="form-group" ng-class="{'has-error': addAppFrm.apple_link.$dirty && addAppFrm.apple_link.$invalid, 'has-success': !addAppFrm.apple_link.$invalid}">
-                    <input class="form-control" ng-model="addApp.apple_link" required="required" type="text" name="apple_link"/>
-                    <span ng-show="addAppFrm.apple_link.$error.required"></span>               
-                  </div></td>
-            </tr>
-             <tr>
-              <td>Google Link</td>
-              <td></td>
-              <td><div class="form-group" ng-class="{'has-error': addAppFrm.google_link.$dirty && addAppFrm.google_link.$invalid, 'has-success': !addAppFrm.google_link.$invalid}">
-                    <input class="form-control" ng-model="addApp.google_link" required="required" type="text" name="google_link"/>
-                    <span ng-show="addAppFrm.google_link.$error.required"></span>               
-                  </div></td>
-            </tr>
-            
-            <tr>
-              <td>App Image</td>
-              <td></td>
-              <td><div class="form-group ">
-                    <input type="file" accept="image/*" image="image" name="logo" id="uploadImage" class="choose-photo" resize-max-height="200" resize-max-width="200" resize-quality="0.7"/>
-                    
-                    <img ng-show="true" id="newLogo" ng-src="{{image.resized.dataURL}}" width="150px" height="150px"/>
-                  </div></td>
-            </tr>
-            <tr>
-            <tr>
-              <td>Description</td>
-              <td></td>
-              <td><div class="form-group" ng-class="{'has-error': addAppFrm.description.$dirty && addAppFrm.description.$invalid, 'has-success': !addAppFrm.description.$invalid}">
-                    <textarea class="form-control" ng-model="addApp.description" required="required" type="text" name="description"></textarea>
-                    <span ng-show="addAppFrm.description.$error.required"></span>               
-                  </div></td>
-            </tr>
-              <td></td>
-              <td></td>
-              <td><button class="btn btn-primary" ng-click="add_app(addAppFrm)">Submit</button></td>
-            </tr>
-          </tbody>
-      </table> 
-    </form>
-  </div>
+<div class="content_section">
+    <div>
+        <div class="my-teams">
+            <h1>Add Page </h1>
+        </div>
+        <div class="white-bg">
+            <div class="content-part">
+                <div class="create-team">                   
+                    <div class="clearfix">&nbsp;</div>
+                    <form name="addAppFrm" ng-submit="add_app(addAppFrm)"> 
+                        <div class="form-group" ng-class="{'has-error': addAppFrm.app_name.$dirty && addAppFrm.app_name.$invalid, 'has-success': !addAppFrm.app_name.$invalid}">
+                           <input class="form-control input-lg" ng-model="addApp.app_name" required="required"  type="text" name="app_name" placeholder="App Name"/>
+                           <span ng-show="addAppFrm.app_name.$error.required"></span>
+                        </div>
+
+                        <div class="form-group" ng-class="{'has-error': addAppFrm.title.$dirty && addAppFrm.title.$invalid, 'has-success': !addAppFrm.title.$invalid}">
+                          <input class="form-control input-lg" ng-model="addApp.title" type="text" name="title" required="required" placeholder="Title"/>
+                          <span ng-show="addAppFrm.title.$error.required"></span>
+                        </div>
+
+                        <div class="form-group user-profile">
+                            <div class="left_img">                               
+                                 <img ng-show="true" id="newLogo" ng-src="{{image.resized.dataURL}}" width="150px" height="150px"/>
+                            </div>
+                            <div class="profile_right">
+                                <h2></h2>
+                             
+                                <input type="file" accept="image/*" image="image" name="logo" id="uploadImage" class="choose-photo" resize-max-height="200" resize-max-width="200" resize-quality="0.7"/>
+                                <a class="chs_photo">choose Photo</a>
+                            </div>
+                            <div class="clearfix">&nbsp;</div>
+                        </div> 
+                        <div class="form-group" ng-class="{'has-error': addAppFrm.apple_link.$dirty && addAppFrm.apple_link.$invalid, 'has-success': !addAppFrm.apple_link.$invalid}">
+                           <input class="form-control input-lg" ng-model="addApp.apple_link" required="required" type="text" name="apple_link" placeholder="Apple Link"/>
+                           <span ng-show="addAppFrm.apple_link.$error.required"></span>               
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': addAppFrm.google_link.$dirty && addAppFrm.google_link.$invalid, 'has-success': !addAppFrm.google_link.$invalid}">
+                            <input class="form-control input-lg" ng-model="addApp.google_link" required="required" type="text" name="google_link" placeholder="Google Link"/>
+                            <span ng-show="addAppFrm.google_link.$error.required"></span>               
+                        </div>
+
+
+                        <div class="form-group" ng-class="{'has-error': addAppFrm.description.$dirty && addAppFrm.description.$invalid, 'has-success': !addAppFrm.description.$invalid}">
+                             <textarea class="form-control input-lg" ng-model="addApp.description" required="required" type="text" name="description" placeholder="Description"></textarea>            
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="team-submit submit_btn" ng-click="submitted=true"> Add Page
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
