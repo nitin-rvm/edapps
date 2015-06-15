@@ -16328,8 +16328,8 @@ hr{
 
 td{
 
-  background-color: #fff;
-
+  /*background-color: #fff;
+*/
 }
 
 tr:nth-child(2n+1) td{
