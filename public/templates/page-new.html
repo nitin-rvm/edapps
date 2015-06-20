@@ -1,0 +1,67 @@
+<style>
+    body {
+        /*background: #f5f5f5;*/
+    }
+    .content_wrapper {
+        background:#faf9f9;
+    }
+    .submit_btn {
+        margin: 40px 0 0 130px;
+    }
+</style>
+<div class="content_section">
+    <div>
+        <div class="my-teams">
+            <h1>Add Page </h1>
+        </div>
+        <div class="white-bg">
+            <div class="content-part">
+                <div class="create-team">                   
+                    <div class="clearfix">&nbsp;</div>
+                    <form name="pageFrm" ng-submit="add_page(pageFrm)"> 
+                        <div class="form-group" ng-class="{'has-error': pageFrm.app_name.$dirty && pageFrm.app_name.$invalid, 'has-success': !pageFrm.app_name.$invalid}">
+                           <input class="form-control input-lg" ng-model="page.app_name" required="required"  type="text" name="app_name" placeholder="App Name"/>
+                           <span ng-show="pageFrm.app_name.$error.required"></span>
+                        </div>
+
+                        <div class="form-group" ng-class="{'has-error': pageFrm.title.$dirty && pageFrm.title.$invalid, 'has-success': !pageFrm.title.$invalid}">
+                          <input class="form-control input-lg" ng-model="page.title" type="text" name="title" required="required" placeholder="Title"/>
+                          <span ng-show="pageFrm.title.$error.required"></span>
+                        </div>
+
+                        <div class="form-group user-profile">
+                            <div class="left_img">                               
+                                 <img ng-show="true" id="newLogo" ng-src="{{image.resized.dataURL}}" width="150px" height="150px"/>
+                            </div>
+                            <div class="profile_right">
+                                <h2></h2>
+                             
+                                <input type="file" accept="image/*" image="image" name="logo" id="uploadImage" class="choose-photo" resize-max-height="200" resize-max-width="200" resize-quality="0.7"/>
+                                <a class="chs_photo">choose Photo</a>
+                            </div>
+                            <div class="clearfix">&nbsp;</div>
+                        </div> 
+                        <div class="form-group" ng-class="{'has-error': pageFrm.apple_link.$dirty && pageFrm.apple_link.$invalid, 'has-success': !pageFrm.apple_link.$invalid}">
+                           <input class="form-control input-lg" ng-model="page.apple_link" required="required" type="text" name="apple_link" placeholder="Apple Link"/>
+                           <span ng-show="pageFrm.apple_link.$error.required"></span>               
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': pageFrm.google_link.$dirty && pageFrm.google_link.$invalid, 'has-success': !pageFrm.google_link.$invalid}">
+                            <input class="form-control input-lg" ng-model="page.google_link" required="required" type="text" name="google_link" placeholder="Google Link"/>
+                            <span ng-show="pageFrm.google_link.$error.required"></span>               
+                        </div>
+
+
+                        <div class="form-group" ng-class="{'has-error': pageFrm.description.$dirty && pageFrm.description.$invalid, 'has-success': !pageFrm.description.$invalid}">
+                             <textarea class="form-control input-lg" ng-model="page.description" required="required" type="text" name="description" placeholder="Description"></textarea>            
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="team-submit submit_btn" ng-click="submitted=true"> Add Page
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

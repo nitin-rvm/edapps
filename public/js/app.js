@@ -12,20 +12,20 @@ var app = angular.module('edApps',[
             templateUrl: 'templates/home.html',
             controller: 'HomeController'
         });
-        $routeProvider.when('/add_landingPage', {
-            templateUrl: 'templates/addapp.html',
+        $routeProvider.when('/page_new', {
+            templateUrl: 'templates/page-new.html',
             controller: 'HomeController'
         }); 
-         $routeProvider.when('/landing/:appName/:appID/edit', {
-            templateUrl: 'templates/editapp.html',
+         $routeProvider.when('/pages/:page/:page_id/edit', {
+            templateUrl: 'templates/page-edit.html',
             controller: 'HomeController'
         });
-         $routeProvider.when('/landing/:appName/deleted', {
+         $routeProvider.when('/pages/:appName/delete', {
             templateUrl: 'templates/home.html',
             controller: 'HomeController'
         }); 
-         $routeProvider.when('/landing/:appName', {
-            templateUrl: 'templates/showapp.html',
+         $routeProvider.when('/pages/:page', {
+            templateUrl: 'templates/page-show.html',
             controller: 'HomeController'
         });
     }]);
