@@ -5,7 +5,7 @@ var app = angular.module('edApps',[
     'ui.bootstrap',
     'firebase',
     'toaster'     
-	]).constant('FIREBASE_URL', 'https://edapps.firebaseio.com/')
+	]).constant('FIREBASE_URL', 'https://edrivenlp.firebaseIO.com/')
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         //$locationProvider.html5Mode(true);
         $routeProvider.otherwise({
