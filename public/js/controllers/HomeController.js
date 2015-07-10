@@ -36,7 +36,7 @@ app.controller('HomeController', function ($scope, FIREBASE_URL, $firebase, toas
       title        : updatedApp.title,
       apple_link   : updatedApp.apple_link,
       google_link  : updatedApp.google_link,
-      app_logo     : $scope.image? $scope.image.resized.dataURL:updatedApp.app_logo,
+      app_logo     : $scope.image ? $scope.image.resized.dataURL  :updatedApp.app_logo,
       description  : updatedApp.description
     };
     $firebase(ref.child('landing_pages').child(updatedApp.$id)).$update(updateData);

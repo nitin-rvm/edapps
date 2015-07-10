@@ -18,7 +18,7 @@
             <div class="content-part">
                 <div class="create-team">                   
                     <div class="clearfix">&nbsp;</div>
-                    <form name="selectedLandingPageFrm" ng-submit="update_app(selectedPage[0])"> 
+                    <form name="selectedLandingPageFrm" ng-submit="update_page(selectedPage[0])"> 
                         <div class="form-group" ng-class="{'has-error': selectedPageFrm.app_name.$dirty && selectedPageFrm.app_name.$invalid, 'has-success': !selectedPageFrm.app_name.$invalid}">
                            <input class="form-control input-lg" ng-model="selectedPage[0].app_name" required="required"  type="text" name="app_name" placeholder="App Name"/>
                            <span ng-show="selectedPageFrm.app_name.$error.required"></span>
