@@ -41,14 +41,14 @@
         </tr>
         <tr>
           <td class="custom-tr">
-            <a href="{{showPage[0].apple_link}}"><img src="images/apple-logo.png" alt="download from google play store" style="width:130px;height:50px; margin-left: 18px;"></a>
+            <a href="{{selectedPage[0].apple_link}}" target="_blank"><img src="images/apple-logo.png" alt="download from google play store" style="width:130px;height:50px; margin-left: 18px;"></a>
           </td>
           <td>
-            <a href="{{showPage[0].google_link}}"><img src="images/google-logo.png" alt="download from google play store" style="width:130px;height:40px; margin-right: 7px;"></a>
+            <a href="{{selectedPage[0].google_link}}" target="_blank"><img src="images/google-logo.png" alt="download from google play store" style="width:130px;height:40px; margin-right: 7px;"></a>
           </td>	  
         </tr>              
-        <tr>                  
-          <td colspan="2"><img class="logo" src="{{selectedPage[0].app_logo}}"></td>
+        <tr style="text-align: center;">
+          <td colspan="2"><img style="margin: 5px;" width="300" src="{{selectedPage[0].app_logo}}"></td>
         </tr>
         <tr>
           <td colspan="2"><p class="pg-description">{{selectedPage[0].description}}</p></td>
