@@ -18,14 +18,14 @@
                           <span ng-show="selectedPageFrm.title.$error.required"></span>
                         </div>
 
-                        <div class="form-group user-profile" ng-class="{'has-error': selectedPageFrm.logo.$dirty && selectedPageFrm.logo.$invalid, 'has-success': !selectedPageFrm.logo.$invalid}">
+                        <div class="form-group user-profile">
                             <div class="left_img"> 
                                    <img ng-show="!image" id="defaultLogo" ng-src="{{selectedPage[0].app_logo}}" width="150px" height="150px"/>
                                  <img ng-show="image" id="newLogo" ng-src="{{image.resized.dataURL}}" width="150px" height="150px"/>
                             </div>
                             <div class="profile_right">
                                 <h2></h2>
-                                <input type="file" accept="image/*" image="image" name="logo" id="uploadImage" class="choose-photo" required="required" resize-max-height="200" resize-max-width="200" resize-quality="0.7"/>
+                                <input type="file" accept="image/*" image="image" name="logo" id="uploadImage" class="choose-photo" resize-max-height="200" resize-max-width="200" resize-quality="0.7"/>
                             </div>
                             <div class="clearfix">&nbsp;</div>
                         </div> 
