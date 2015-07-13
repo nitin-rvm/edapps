@@ -1,42 +1,34 @@
-<style type="text/css">    
-    .landing-Table{
-    	padding: 12px 0; 
-    }
-</style>
 <div class = "content_section" ng-init = "get_landing_pages();">
-<div class = "white-bg">
+<div class = "container">
 	<div class='row'>
 		<a href="#/page_new"><button class="btn btn-success pull-right" style="margin-right: 15px; margin-top: 10px;margin-bottom: 10px;">Add New Page</button></a>
 	</div>
-	<div class='row'>
-		<div class="col-sm-12">
-			<table class="table-responsive table table-hover landing-Table">
-		      <thead>
-		        <tr>
-		          <th>App Name</th>
-		          <th>Title</th>
-		          <th>Apple Link</th>
-		          <th>Google Link</th>
-		          <th>Image</td>
-		          <th>Action</th> 
-		        </tr>
-		      </thead>
-		      <tbody>
-		        <tr ng-repeat="page in pages">
-		          <td>{{ page.app_name }}</td>
-				      <td>{{ page.title }}</td>
-				      <td>{{ page.apple_link }}</td>
-				      <td>{{ page.google_link }}</td>	
-				      <td><img src = "{{page.app_logo}}" width="120px" height="120px"></td>		
-				      <td>
-				        <a href="#/pages/{{page.app_name}}" title="View Page" ><span>View | </span></a>
-                <a href="#/pages/{{page.app_name}}/{{page.$id}}/edit" title="Edit Page"><span>Edit | </span></a>
-                <a href="#/pages/{{page.app_name}}/delete" title="Delete Page" ng-click="delete_page(page.$id);" ng-confirm-click="Are you sure?"><span>Delete</span></a> 
-              </td>
-		        </tr>		      
-		      </tbody>
-		    </table>
-		</div>
-	</div>
-</div>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>App Name</th>
+          <th>Title</th>
+          <th>Apple Link</th>
+          <th>Google Link</th>
+          <th>Image</td>
+          <th>Action</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="page in pages">
+          <td>{{ page.app_name }}</td>
+          <td>{{ page.title }}</td>
+          <td>{{ page.apple_link }}</td>
+          <td>{{ page.google_link }}</td>	
+          <td><img src = "{{page.app_logo}}" width="120px" height="120px"></td>		
+          <td>
+            <a href="#/pages/{{page.app_name}}" title="View Page" ><span>View</span></a> | 
+            <a href="#/pages/{{page.app_name}}/{{page.$id}}/edit" title="Edit Page"><span>Edit</span></a> | 
+            <a href="#/pages/{{page.app_name}}/delete" title="Delete Page" ng-click="delete_page(page.$id);" ng-confirm-click="Are you sure?"><span>Delete</span></a> 
+          </td>
+        </tr>		      
+      </tbody>
+    </table>
+  </div>
 </div>

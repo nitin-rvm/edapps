@@ -1,61 +1,25 @@
-<style type="text/css">	
-	.pg-title{
-		text-align: center;
-		font-family: Arial,sans-serif;
-		color:black;
-		font-size: 32px;
-		margin-left: 20px;
-		margin-right: 20px;
-	}
-	.pg-description{
-		margin: 5px;
-		font-family: Arial,sans-serif;
-		line-height: 22px;
-		text-align: justify; 
-		margin-top: 10px;
-		font-size: 16px;
-		color: black;
-	    padding-left: 21px;
-        padding-right: 24px;
-	}
-	.app-table{
-		background-color: #EEECEC;
-	  }	
-	  .logo{
-	  	width: 100%;
-	  	padding-left: 28px;
-	  	padding-right: 28px;
-	  	margin-top: -82px;
-	  	margin-bottom: -22px;
-	  }
-}
-</style>
-<div class="container">
-  <div class="row">
-   <div class="col-sm-4"></div>
-	<div class="col-sm-4">
-    <table class= "table-responsive app-table">
-      <tbody>
-        <tr>
-          <td colspan="2"><h1 class="pg-title"><b>{{selectedPage[0].title}}</b></h1></td>
-        </tr>
-        <tr>
-          <td class="custom-tr">
-            <a href="{{selectedPage[0].apple_link}}" target="_blank"><img src="images/apple-logo.png" alt="download from google play store" style="width:130px;height:50px; margin-left: 18px;"></a>
-          </td>
-          <td>
-            <a href="{{selectedPage[0].google_link}}" target="_blank"><img src="images/google-logo.png" alt="download from google play store" style="width:130px;height:40px; margin-right: 7px;"></a>
-          </td>	  
-        </tr>              
-        <tr style="text-align: center;">
-          <td colspan="2"><img style="margin: 5px;" width="300" src="{{selectedPage[0].app_logo}}"></td>
-        </tr>
-        <tr>
-          <td colspan="2"><p class="pg-description">{{selectedPage[0].description}}</p></td>
-        </tr>
-      </tbody>
-    </table>
+<section class="landing-page">
+  <div class="container">
+    <div class="download">
+      <h1 style="text-align:center">{{selectedPage[0].title}}</h1>
+    </div>
+    <div>
+      <div class="col-xs-6">
+        <a href="{{selectedPage[0].apple_link}}"><img src="images/apple-logo.png" alt="download from google play store"></a>
+      </div>
+      <div class="col-xs-6" style="margin-top: 7px;">
+        <a href="{{selectedPage[0].google_link}}"><img src="images/google-logo.png" class="download from google play store"></a>
+      </div>
+    </div>
+    <div>
+      <div class="image">
+        <img src="{{selectedPage[0].app_logo}}">
+      </div>
+    </div>
+    <div>
+      <div class="para">
+        <p>{{selectedPage[0].description}}</p>
+      </div>
+    </div>
   </div>
-  <div class="col-sm-4"></div>
-  </div>
-</div>
+</section>
